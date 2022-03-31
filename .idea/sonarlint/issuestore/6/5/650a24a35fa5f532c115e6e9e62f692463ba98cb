@@ -1,0 +1,14 @@
+
+h
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 85 to the 15 allowed.(ÚÃ²ß
+O
+java:S4719"9Replace charset name argument with StandardCharsets.UTF_8(øÚÞÜ
+U
+java:S4719Ÿ"9Replace charset name argument with StandardCharsets.UTF_8(âÙþôùÿÿÿÿ
+n	java:S135"YReduce the total number of break and continue statements in this loop to use at most one.(Ù÷Âé
+r	java:S127Y"XRefactor the code in order to not assign to this loop counter from within the loop body.(Ö¸å”ýÿÿÿÿ
+l	java:S127^"XRefactor the code in order to not assign to this loop counter from within the loop body.(ÉÎ´?
+r	java:S127a"XRefactor the code in order to not assign to this loop counter from within the loop body.(µ×ÏÑüÿÿÿÿ
+r	java:S127g"XRefactor the code in order to not assign to this loop counter from within the loop body.(µ×ÏÑüÿÿÿÿ
+h
+java:S2259f"MA "NullPointerException" could be thrown; "dataVectorRango" is nullable here.(¤â²öüÿÿÿÿ

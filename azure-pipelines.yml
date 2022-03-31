@@ -1,0 +1,41 @@
+
+trigger:
+  - master
+
+pool:
+  name: WINDOWS
+
+steps:
+  - task: SonarQubePrepare@4
+    inputs:
+      SonarQube: 'SonarCeiba'
+      scannerMode: 'CLI'
+      configMode: 'file'
+
+  - task: Gradle@2
+    inputs:
+      workingDirectory: ''
+      gradleWrapperFile: 'gradlew'
+      gradleOptions: '-Xmx3072m'
+      javaHomeOption: 'Path'
+      jdkDirectory: 'D:\jdk-11.0.10_windows-x64_bin\jdk-11.0.10'
+      publishJUnitResults: true
+      testResultsFiles: '**/TEST-*.xml'
+      tasks: 'build'
+
+  - task: Gradle@2
+    displayName: Gradle Test
+    inputs:
+      gradleWrapperFile: 'gradlew'
+      tasks: 'test'
+      publishJUnitResults: true
+      testResultsFiles: '**/TEST-*.xml'
+      javaHomeOption: 'Path'
+      sonarQubeRunAnalysis: false
+
+  - task: SonarQubePrepare@4
+
+  - task: SonarQubePublish@4
+    inputs:
+      pollingTimeoutSec: '300'
+
